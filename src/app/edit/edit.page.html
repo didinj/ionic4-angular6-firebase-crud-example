@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="infoForm">
+    <ion-item>
+      <ion-label position="floating">Info Title</ion-label>
+      <ion-input type="text" formControlName="info_title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Info Description</ion-label>
+      <ion-input type="text" formControlName="info_description"></ion-input>
+    </ion-item>
+    <ion-button shape="round" color="primary" expand="block" [disabled]="!infoForm.valid" (click)="updateInfo()">Update</ion-button>
+  </form>
+</ion-content>
